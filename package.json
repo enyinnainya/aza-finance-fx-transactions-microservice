@@ -1,0 +1,43 @@
+{
+   "name": "AZA-Finance-FX-Transactions",
+   "version": "1.0.0",
+   "description": "A microservice for managing fx transactions for AZA Finance",
+   "main": "server.js",
+   "type": "commonjs",
+   "scripts": {
+      "start": "nodemon src/server.js",
+      "test": "env-cmd -f ./tests/config/api-access-token.env jest --config ./tests/config/jest.config.js",
+      "format:check": "prettier --check .",
+      "format:write": "prettier --write .",
+      "lint:check": "eslint .",
+      "lint:fix": "eslint --fix ."
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/enyinnainya/aza-finance-fx-transactions-microservice.git"
+   },
+   "author": "Enyinna Inya",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/enyinnainya/aza-finance-fx-transactions-microservice/issues"
+   },
+   "homepage": "https://github.com/enyinnainya/aza-finance-fx-transactions-microservice#readme",
+   "dependencies": {
+      "body-parser": "^1.20.0",
+      "cors": "^2.8.5",
+      "express": "^4.18.1",
+      "joi": "^17.6.0",
+      "jsonwebtoken": "^8.5.1",
+      "lodash": "^4.17.21",
+      "mongodb": "^4.7.0"
+   },
+   "devDependencies": {
+      "env-cmd": "^10.1.0",
+      "eslint": "^8.17.0",
+      "eslint-config-prettier": "^8.5.0",
+      "jest": "^28.1.1",
+      "nodemon": "^2.0.16",
+      "prettier": "^2.6.2",
+      "supertest": "^6.2.3"
+   }
+}
