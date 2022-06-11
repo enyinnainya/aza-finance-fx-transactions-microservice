@@ -33,7 +33,7 @@ This will run all tests cases to make sure the app is working correctly as expec
 
 To consume the Api endpoints, you can use Postman to make the api requests and provide the authorization header for each endpoint.
 
-This app has also been deployed and here is the API url for your quick tests:
+This app has also been deployed and here is the API url for your quick tests:  
 [https://azafinance-fxtransactions-microservice.eminentconcepts.com](https://azafinance-fxtransactions-microservice.eminentconcepts.com)
 
 You can start consuming the APIs with Postman using the above url.
