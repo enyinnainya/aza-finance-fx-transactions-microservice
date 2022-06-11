@@ -10,6 +10,9 @@ const AppAuth = require('../middleware/app-auth');
 
 const transactionsController =  new TransactionsController();
 
+router.get('/', async (req, res) => {
+   return res.redirect("/transactions");
+});
 router.post(ROUTE_CREATE_OR_LIST_TRANSACTIONS, AppAuth, async (req, res) => {
    return await transactionsController.addTransactionAction(req, res);
 });
