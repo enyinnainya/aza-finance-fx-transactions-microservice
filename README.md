@@ -7,7 +7,7 @@ The app uses MongoDB cloud-hosted database for persisting data in the system.
 ## Api Authentication
 All the microservice endpoints require an authorization header for authentication.
 The Authorization header is a signed JWT token. Header should be in the format: "Authorization: Bearer {jwtToken}".
-For the purpose of this assessment and to be able to consume the api endpoints, a signed JWT token has been generated and provided in the root of this repo as access-token.json. Simply pass this Authorizaiton header in all the requests for the different endpoints.
+For the purpose of this assessment and to be able to consume the api endpoints, a signed JWT token has been generated and provided in the root of this repo as access-token.json. Simply pass this Authorization header in all the requests for the different endpoints.
 ## Author
 This microservice was engineered and developed by Enyinna Inya as part of assessment requirements.
 - [@enyinnainya](https://github.com/enyinnainya)
@@ -86,7 +86,7 @@ Authorization: Bearer [jwtToken]
 ```
 GET /transactions
 ```
-- This endpoint gets a specific fx transaction by ID.
+- This endpoint lists all the existing fx transactions.
   **Example:**
 ##### HTTP Header:
 
@@ -131,7 +131,7 @@ Authorization: Bearer [jwtToken]
 ```
 GET /transactions/:id
 ```
-- This endpoint adds an fx transaction based on post data/payload.
+- This endpoint gets a specific fx transaction by ID.
   **Example:**
 ##### HTTP Header:
 
