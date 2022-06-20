@@ -163,6 +163,49 @@ Authorization: Bearer [jwtToken]
     }
 }
 ```
+**Update a Transaction:**
+```
+POST /transactions/update
+```
+- This endpoint updates an existing fx transaction based on post data/payload.
+  **Example:**
+##### HTTP Header:
+
+```
+Authorization: Bearer [jwtToken]
+```
+
+##### POST Request Payload:
+
+```
+{
+    "fromAmount": 5.6,
+    "fromCurrency": "EUR",
+    "toAmount": 2500,
+    "toCurrency": "NGN",
+    "id": "62a4e9ceed95f89f6a71e010"
+}
+```
+##### Api Response:
+
+```
+{
+    "success": true,
+    "data": {
+        "customerId": "1667611846676e356218923b",
+        "fromAmount": 5.6,
+        "fromCurrency": "EUR",
+        "toAmount": 2500,
+        "toCurrency": "NGN",
+        "created": "June 11, 2022, 8:15 pm UTC",
+        "createdTimestamp": 1654974926,
+        "updated": "June 20, 2022, 1:54 pm UTC",
+        "updatedTimestamp": 1655729667,
+        "id": "62a4e9ceed95f89f6a71e010"
+    }
+}
+```
+
 ## Technologies Used
 The following technologies were used to build this app.
 - NodeJS

@@ -171,6 +171,62 @@ class TransactionsController extends BaseController {
          return TransactionsController.sendFailedResponse(res, APPLICATION_ERROR, 500);
       }
    }
+
+    /**
+    * @api {POST} /transactions/update update an fx transaction
+    * @apiDescription Endpoint to update an existing fx transaction based on post data/payload
+    * @apiName UpdateTransaction
+    * @apiGroup Transactions
+    *
+    * @apiParam {String} jwt token returned from access token endpoint during login pass via header authorization
+    * @apiParam {String} required ID of the transaction to be udpated
+    * @apiParam {String} optional customerId ID of the customer whom this transaction linked to
+    * @apiParam {String} optional fromAmount This is the amount received from the customer in the origin currency; Also known as the Input Amount
+    * @apiParam {String} optional fromCurrency This is the currency the money was received from the customer. Also known as the input or origin currency
+    * @apiParam {String} optional toAmount This is the amount to be paid to the customer in the destination currency after FX conversion and processing. Also known as the Output Amount
+    * @apiParam {String} optional toCurrency This is the currency the money will be paid out ; Also known as the output or destination currency
+    *
+    * @apiSuccess success true
+    * @apiSuccess {Object} data => {'id' => [The updated transaction id, used to manage this transaction]}
+    *
+    * @apiSuccessExample Success-Response:
+    *     HTTP/1.1 200 OK
+    *     {
+    *       data: {
+    *         "id": "604536badb4d543bcb7076b3",
+    *          "customerId": "615b6742d6676e356218923b",
+    *          "fromAmount" "500",
+    *          "fromCurrency": "USD",
+    *          "toAmount": "80000",
+    *          "toCurrency": "NGN"
+    *       },
+    *       "success": true
+    *     }
+    *
+    * @apiError success false
+    * @apiError errors object of fields and error messages
+    *
+    * @apiErrorExample Error-Response:
+    *     HTTP/1.1 400 Bad Request
+    *     {
+    *       "success": false,
+    *       "errors": {"toCurrency": "The Output Currency must be a string and must be 3 characters long"}
+    *     }
+    */
+   async updateTransactionAction(req,res){
+      try{
+
+         const postData = (req && !empty(req.body))?req.body:{};
+         const {data, success} = await this.transactionService.updateTransaction(postData);
+         if(isBoolean(success) && success === true){
+            return TransactionsController.sendSuccessResponse(res,(!empty(data)?data:null), 200);
+         }
+         return TransactionsController.sendFailedResponse(res, (!empty(data)?data:APPLICATION_ERROR), (data && data.app)?500: 400);
+      }catch(err){
+         return TransactionsController.sendFailedResponse(res, APPLICATION_ERROR, 500);
+       
+      }
+   }
 }
 
 module.exports = TransactionsController;

@@ -266,6 +266,41 @@ class BaseModel {
         }
     }
 
+    /**
+     * update a record
+     * @param {*} document
+     * @return mixed
+     */ 
+    async update(document, _id) {
+        let responseData=null;
+        if (!isObject(document)) {
+            return responseData;
+        }
+        document = utf8_convert(document);
+
+        if (isString(_id) && _id.length === 24) {
+            _id = BaseModel.getMongoId(_id);
+        }
+
+        if (empty(document['updated']) || !isString(document['updated'])) {
+            document['updated'] = getFormattedDate();
+            document['updatedTimestamp'] = getTimestamp();
+        } else{
+            document['updatedTimestamp'] = getTimestamp(document['updated']);
+        }
+
+        const updateResult = await dbo.dbConnection().collection(this.collection_name).updateOne({ _id: _id }, { $set: document }, { multi: false, upsert: false });
+        if(updateResult){
+            responseData= {
+                ...document,
+                id: BaseModel.getMongoStringId(_id)
+            }
+        
+        }
+        return responseData;
+    }
+    
+
 }
 
 module.exports = BaseModel;

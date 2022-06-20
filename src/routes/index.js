@@ -3,6 +3,7 @@ const router = express.Router();
 const {
    ROUTE_CREATE_OR_LIST_TRANSACTIONS,
    ROUTE_GET_A_TRANSACTION,
+   ROUTE_UPDATE_A_TRANSACTION
 } = require('../lib/resource-routes');
 const TransactionsController = require('../controllers/transactions');
 const { RESOURCE_NOT_FOUND } = require('../lib/error-messages');
@@ -21,6 +22,10 @@ router.get(ROUTE_CREATE_OR_LIST_TRANSACTIONS, AppAuth, async(req, res) => {
 });
 router.get(ROUTE_GET_A_TRANSACTION, AppAuth, async(req, res) => {
    return await transactionsController.getTransactionAction(req, res);
+});
+
+router.post(ROUTE_UPDATE_A_TRANSACTION, AppAuth, async(req, res) => {
+   return await transactionsController.updateTransactionAction(req, res);
 });
 
 //Request that doesn't match any of the above routes results in a resource not found error; Return this error to the api caller.
