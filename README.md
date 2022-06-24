@@ -1,6 +1,6 @@
 
-# AZA Finance FX Transactions Microservice
-This is an FX Transactions microservice to be used for storing/creating transactions, listing all existing transactions and getting a specific transaction for the AZA Finance FX Platform. This project is an assessment for AZA Finance.
+# FX Transactions Microservice
+This is an FX Transactions microservice to be used for storing/creating transactions, listing all existing transactions and getting a specific transaction for the FX Platform.
 The app uses MongoDB cloud-hosted database for persisting data in the system.
 
 
@@ -9,7 +9,7 @@ All the microservice endpoints require an authorization header for authenticatio
 The Authorization header is a signed JWT token. Header should be in the format: "Authorization: Bearer {jwtToken}".
 For the purpose of this assessment and to be able to consume the api endpoints, a signed JWT token has been generated and provided in the root of this repo as access-token.json. Simply pass this Authorization header in all the requests for the different endpoints.
 ## Author
-This microservice was engineered and developed by Enyinna Inya as part of assessment requirements.
+This microservice was engineered and developed by Enyinna Inya.
 - [@enyinnainya](https://github.com/enyinnainya)
 
 
@@ -33,8 +33,6 @@ This will run all tests cases to make sure the app is working correctly as expec
 
 To consume the Api endpoints, you can use Postman to make the api requests and provide the authorization header for each endpoint.
 
-This app has also been deployed and here is the API url for your quick tests:  
-[https://azafinance-fxtransactions-microservice.eminentconcepts.com](https://azafinance-fxtransactions-microservice.eminentconcepts.com)
 
 You can start consuming the APIs with Postman using the above url.
 
