@@ -8,13 +8,13 @@ const {empty} = require('../lib/utils');
  * JWT signing claim is:
  * payload: {apiKey: APP_ACCESS_API_KEY } with signing options:
  * signing options: {
-        issuer: "AZA Finance FX Transactions",
-        subject: "enyinnainya@azafinanceassessment.com",
+        issuer: "FX Transactions",
+        subject: "enyinnai@eminentconcepts.com",
         expiresIn: (60 * 60 * 24 * 30 * 12) // expires in 12 months for testing
     }
  * signing key is APP_JWT_SECRET
  *  To pass, verified token need to have the field apiKey and must match the APP_ACCESS_API_KEY defined in lib/constants
- *  This is only for this Assessment and Demonstrate the use of jwt to prevent unauthorized access to this microservice.
+ *  This is only to Demonstrate the use of jwt to prevent unauthorized access to this microservice.
  *  In real cases, they would be an access token endpoint specifically to issue access tokens for login and access to apis
  */
 const AppAuth = async (req, res, next) => {
