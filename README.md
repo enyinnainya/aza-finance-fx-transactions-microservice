@@ -7,7 +7,7 @@ The app uses MongoDB cloud-hosted database for persisting data in the system.
 ## Api Authentication
 All the microservice endpoints require an authorization header for authentication.
 The Authorization header is a signed JWT token. Header should be in the format: "Authorization: Bearer {jwtToken}".
-For the purpose of this assessment and to be able to consume the api endpoints, a signed JWT token has been generated and provided in the root of this repo as access-token.json. Simply pass this Authorization header in all the requests for the different endpoints.
+For the purpose of making this app public and to be able to consume the api endpoints, a signed JWT token has been generated and provided in the root of this repo as access-token.json. Simply pass this Authorization header in all the requests for the different endpoints.
 ## Author
 This microservice was engineered and developed by Enyinna Inya.
 - [@enyinnainya](https://github.com/enyinnainya)
