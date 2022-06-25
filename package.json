@@ -1,7 +1,7 @@
 {
-   "name": "AZA-Finance-FX-Transactions",
+   "name": "FX-Transactions-Microservice",
    "version": "1.0.0",
-   "description": "A microservice for managing fx transactions for AZA Finance",
+   "description": "A microservice for managing fx transactions",
    "main": "server.js",
    "type": "commonjs",
    "scripts": {
@@ -14,14 +14,14 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/enyinnainya/aza-finance-fx-transactions-microservice.git"
+      "url": "git+https://github.com/enyinnainya/fx-transactions-microservice.git"
    },
    "author": "Enyinna Inya",
    "license": "ISC",
    "bugs": {
-      "url": "https://github.com/enyinnainya/aza-finance-fx-transactions-microservice/issues"
+      "url": "https://github.com/enyinnainya/fx-transactions-microservice/issues"
    },
-   "homepage": "https://github.com/enyinnainya/aza-finance-fx-transactions-microservice#readme",
+   "homepage": "https://github.com/enyinnainya/fx-transactions-microservice#readme",
    "dependencies": {
       "body-parser": "^1.20.0",
       "cors": "^2.8.5",
